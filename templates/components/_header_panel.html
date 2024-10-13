@@ -1,0 +1,35 @@
+{% load static %}
+<div class="header_panel">
+    <div class="header_panel-item">
+        <img class="header_icon" src="{% static 'store/images/icons/search_icon.svg' %}" alt="">
+    </div>
+    {% if request.user.is_authenticated %}
+    <div class="header_panel-item">
+        <a href="{% url 'logout' %}"><img class="circum" src="{% static 'store/images/icons/logout.svg' %}" alt=""></a>
+    </div>
+    {% else %}
+    <div class="header_panel-item">
+        <a href="{% url 'login_registration' %}"><img class="circum" src="{% static 'store/images/icons/circum_login.svg' %}" alt=""></a>
+    </div>
+    {% endif %}
+
+    <div class="header_panel-item">
+        <a href="{% url 'my_favourite' %}">
+            <img class="header_icon" src="{% static 'store/images/icons/basket_icon.svg' %}" alt="">
+        </a>
+    </div>
+
+    <div class="header_panel-item">
+        <a href="{% url 'cart' %}">
+            <img class="header_icon" src="{% static 'store/images/icons/cart3.svg' %}" alt="">
+        </a>
+    </div>
+
+
+    <div class="header_panel-item">
+        <img class="header_icon" src="{% static 'store/images/icons/ru_lang_icon.svg' %}" alt="">
+    </div>
+    <div class="header_panel-item">
+        <img class="header_icon" src="{% static 'store/images/icons/user_icon.svg' %}" alt="">
+    </div>
+</div>
